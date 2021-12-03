@@ -109,6 +109,8 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
+DATE_TIME_FIELD_FORMAT = "%Y-%m-%d, %H:%M"
+
 USE_I18N = True
 
 USE_L10N = True
