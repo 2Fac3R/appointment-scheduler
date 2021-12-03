@@ -1,3 +1,4 @@
+from django.conf import settings
 from rest_framework import serializers
 
 from django.contrib.auth.models import User, Group
@@ -19,10 +20,11 @@ class AppointmentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Appointment
         fields = ['url', 'date', 'user']
+    date = serializers.DateTimeField(format=settings.DATE_TIME_FIELD_FORMAT)
 
 
 class DatesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Appointment
         fields = ['date']
-    
+    date = serializers.DateTimeField(format=settings.DATE_TIME_FIELD_FORMAT)
