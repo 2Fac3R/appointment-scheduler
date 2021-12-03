@@ -20,8 +20,20 @@ class AppointmentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Appointment
         fields = ['url', 'date', 'user']
-    date = serializers.DateTimeField(format=settings.DATE_TIME_FIELD_FORMAT)
-
+    
+    def is_half_or_hour(value):
+        """
+        Check if minute is an hour or half-hour.
+        """
+        valid = [00, 30]
+        if value.minute not in valid:
+            raise serializers.ValidationError("All appointments must start and end on the hour or half-hour.")
+        return value
+    
+    date = serializers.DateTimeField(
+        format=settings.DATE_TIME_FIELD_FORMAT,
+        validators=[is_half_or_hour]
+    )
 
 class DatesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
