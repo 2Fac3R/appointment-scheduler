@@ -2,7 +2,7 @@ from rest_framework import viewsets, generics
 from rest_framework import permissions
 from django.contrib.auth.models import User, Group
 
-from .serializers import UserSerializer, GroupSerializer, AppointmentSerializer
+from .serializers import UserSerializer, GroupSerializer, AppointmentSerializer, DatesSerializer
 from .models import Appointment
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -30,7 +30,10 @@ class AppointmentViewSet(viewsets.ModelViewSet):
     # permission_classes = [permissions.IsAuthenticated]
 
 class AppointmentList(generics.ListAPIView):
-    serializer_class = AppointmentSerializer
+    """
+    API endpoint that shows appointments filtered by User id
+    """
+    serializer_class = DatesSerializer
 
     def get_queryset(self):
         return Appointment.objects.filter(user=self.request.query_params.get('id', None))

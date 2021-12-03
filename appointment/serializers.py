@@ -19,4 +19,10 @@ class AppointmentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Appointment
         fields = ['url', 'date', 'user']
+
+
+class DatesSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Appointment
+        fields = ['date']
     
