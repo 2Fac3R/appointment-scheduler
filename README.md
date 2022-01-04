@@ -10,8 +10,8 @@ Clone this repository
 
 Create or start your virtual environment [venv](https://docs.python.org/3/library/venv.html)
 
-    virtualenv venv 
-    source venv/bin/activate
+    python3 -m venv env
+    source env/bin/activate
 
 Install requirements. Use the package manager [pip](https://pip.pypa.io/en/stable/)
 
