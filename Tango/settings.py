@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'appointment.apps.AppointmentConfig', # appointment/apps.py
-    'rest_framework', #djangorestframework
+    'appointment.apps.AppointmentConfig',  # appointment/apps.py
+    'rest_framework',  # djangorestframework
 ]
 
 MIDDLEWARE = [

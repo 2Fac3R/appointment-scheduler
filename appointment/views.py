@@ -5,6 +5,7 @@ from django.contrib.auth.models import User, Group
 from .serializers import UserSerializer, GroupSerializer, AppointmentSerializer, DatesSerializer
 from .models import Appointment
 
+
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -12,6 +13,7 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated]
+
 
 class GroupViewSet(viewsets.ModelViewSet):
     """
@@ -21,6 +23,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+
 class AppointmentViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows appointments to be viewed or edited.
@@ -28,6 +31,7 @@ class AppointmentViewSet(viewsets.ModelViewSet):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
     # permission_classes = [permissions.IsAuthenticated]
+
 
 class AppointmentList(generics.ListAPIView):
     """
