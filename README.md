@@ -5,13 +5,13 @@ This repository represents my implementation for the Python Technical Test appli
 ## Installation
 Clone this repository
 
-    git clone https://github.com/2Fac3R/Tango.git
-    cd Tango
+    git clone https://github.com/2Fac3R/appointment-scheduler.git
+    cd appointment-scheduler
 
 Create or start your virtual environment [venv](https://docs.python.org/3/library/venv.html)
 
-    python3 -m venv env
-    source env/bin/activate
+    python3 -m venv .venv
+    source .venv/bin/activate
 
 Install requirements. Use the package manager [pip](https://pip.pypa.io/en/stable/)
 
@@ -66,7 +66,6 @@ You can find more details in *requirements.txt* file.
 In my opinion, covering the first requirement, all appointments should have the second requirement applied by default unless you split date into "start_date" and "end_date" fields.
 * For this assignment User ID is just an incremental integer value, but in more complex systems I would use an UUID hash or something similar.
 
-
 ## TODO
 
 * Validation:
@@ -74,7 +73,6 @@ In my opinion, covering the first requirement, all appointments should have the 
     A User can only have one appointment on a calendar date
 
 I'm trying using UniqueTogetherValidator validator but not fully implemented yet.
-
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
